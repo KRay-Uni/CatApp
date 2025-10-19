@@ -1,11 +1,18 @@
 class Cat (val name: String, var age: Int, var weight: Int) {
 
-    fun walk() {
-        weight--
+    fun walk(distance: Int) : Boolean {
+        if (weight - distance > 5) {
+            weight -= distance
+            return true
+        }
+        return false
     }
 
-    fun eat() {
-        weight++
+    fun eat() : Boolean {
+        if (weight++ <= 20) {
+            return true
+        }
+        return false
     }
 
     override fun toString() : String {
